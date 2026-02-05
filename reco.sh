@@ -6,7 +6,7 @@ echo "SCRIPTDIR: ${SCRIPTDIR}"
 
 export XRD_REQUESTTIMEOUT=1200
 
-pull_ccdb_path="http://ccdb-test.cern.ch:8080"
+pull_ccdb_path="http://localhost:8888"
 
 ARGS_ALL="--session default --shm-segment-size 16000000000"
 
