@@ -6,6 +6,7 @@ set -euo pipefail
 DEFAULT_FILEPATH="/home/mft/data/data-1.raw"
 CFG_FILE="readout.cfg"
 
+# use first argument if provided, otherwise default
 INPUT_FILEPATH="${1:-$DEFAULT_FILEPATH}"
 cat > "${CFG_FILE}" <<EOF
 [input-MFT-0]
