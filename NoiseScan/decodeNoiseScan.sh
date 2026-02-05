@@ -16,7 +16,6 @@ WORKFLOW+="o2-itsmft-stf-decoder-workflow ${ARGS_ALL} --runmft --digits --no-clu
 WORKFLOW+="o2-calibration-mft-calib-workflow ${ARGS_ALL} --useDigits --prob-threshold 1e-5 --send-to-server CCDB  --path-CCDB \"/MFT/Calib/NoiseMap\" --path-CCDB-single \"/MFT/Calib/NoiseMapSingle\" --condition-backend ${pull_ccdb_path} --condition-remap file://./TestCCDB=MFT/Calib/NoiseMap,MFT/Calib/NoiseMapSingle --configKeyValues \"NameConf.mCCDBServer=http://localhost:8888\" | "
 WORKFLOW+="o2-calibration-ccdb-populator-workflow ${ARGS_ALL} --ccdb-path=${pull_ccdb_path} | "
 WORKFLOW+="o2-dpl-run ${ARGS_ALL} --batch --run"
-#WORKFLOW+="o2-dpl-run ${ARGS_ALL} --batch --dump"
 
 echo $WORKFLOW > workflow.txt
 eval $WORKFLOW
